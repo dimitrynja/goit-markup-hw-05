@@ -52,6 +52,11 @@ ul {
 li {
   list-style-type: none;
 }
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
 .list {
   margin: 0;
   padding: 0;
@@ -275,9 +280,28 @@ img {
 }
 .work_item {
   flex-basis: calc((100% - 60px) / 3);
+  position: relative;
 }
 .work_item:not(:first-child) {
   margin-left: 30px;
+}
+.work_item_discription {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  color: var(--primary_color);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 /*team*/
@@ -461,6 +485,33 @@ img {
 .project_card:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.project_card:hover .text_card {
+  opacity: 1;
+}
+.project_card:focus .text_card {
+  opacity: 1;
+}
+.card_box {
+  position: relative;
+}
+.text_card {
+  position: absolute;
+  top: 0;
+
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  text-align: left;
+
+  padding-top: 63px;
+  padding-bottom: 63px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  color: var(--primary_color);
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
 }
 .project_name {
   font-weight: 700;
