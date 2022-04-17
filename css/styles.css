@@ -150,7 +150,21 @@ img {
 }
 .header_nav_link.current {
   color: var(--accent);
+  position: relative;
+  padding-top: 32px;
+  padding-bottom: 29px;
 }
+
+.current::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent);
+}
+
 .header_contact_link:hover,
 .header_contact_link:focus {
   color: var(--accent);
@@ -588,4 +602,49 @@ img {
 .footer .social_link:hover,
 .footer .social_link:focus {
   background-color: var(--accent);
+}
+
+/*---------------------BACKDROP-------------------------------*/
+.is_hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.modal {
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: var(--primary_color);
+}
+.modal_close_button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.close_button {
+  width: 18px;
+  height: 18px;
 }
