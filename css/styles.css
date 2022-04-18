@@ -100,6 +100,10 @@ img {
 .header_link {
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo {
@@ -144,7 +148,9 @@ img {
   color: var(--color_contact);
 }
 .header_nav_link:hover,
-.header_nav_link:focus {
+.header_nav_link:focus,
+.header_contact_link:hover,
+.header_contact_link:focus {
   color: var(--accent);
   border: none;
 }
@@ -163,12 +169,6 @@ img {
   width: 100%;
   height: 4px;
   background-color: var(--accent);
-}
-
-.header_contact_link:hover,
-.header_contact_link:focus {
-  color: var(--accent);
-  border: none;
 }
 
 .contact_item {
@@ -376,6 +376,9 @@ img {
   height: 44px;
   border-radius: 50%;
   color: var(--color_soc_links);
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social_link:hover,
 .social_link:focus {
@@ -420,6 +423,10 @@ img {
   border-radius: 4px;
   color: var(--color_soc_links);
   cursor: pointer;
+
+  transition-property: color, border-color, border-radius;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client_icon {
   --client_color: currentColor;
@@ -454,6 +461,10 @@ img {
   background-color: var(--portfolio_filter_bc);
   cursor: pointer;
   padding: 6px 22px;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button_filter:hover,
 .button_filter:focus {
@@ -502,12 +513,14 @@ img {
 }
 .project_card:hover .text_card {
   opacity: 1;
+  transform: translateY(0);
 }
 .project_card:focus .text_card {
   opacity: 1;
 }
 .card_box {
   position: relative;
+  overflow: hidden;
 }
 .text_card {
   position: absolute;
@@ -525,7 +538,10 @@ img {
 
   color: var(--primary_color);
   background-color: rgba(33, 150, 243, 0.9);
-  opacity: 0;
+  transform: translateY(100%);
+  transition-property: transform, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project_name {
   font-weight: 700;
@@ -606,8 +622,10 @@ img {
 
 /*---------------------BACKDROP-------------------------------*/
 .is_hidden {
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
+  transform: translateX(100%);
 }
 .backdrop {
   position: fixed;
@@ -617,6 +635,10 @@ img {
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.1);
+
+  transition-property: transform, background-color, opacity, visibility;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal {
   position: absolute;
