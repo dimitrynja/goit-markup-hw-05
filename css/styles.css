@@ -625,7 +625,7 @@ img {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transform: translateX(100%);
+  transform: scale(0);
 }
 .backdrop {
   position: fixed;
